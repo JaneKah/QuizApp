@@ -14,15 +14,58 @@ body {
     align-items: center;
 }
 
-.card {
+.bottom-spacing {
     margin-bottom: 8px;
 }
 
-.card:hover {
+.selected-answer:hover {
     cursor: pointer;
     background-color: rgba(211, 211, 211, 0.1);
 }
 
 .bg-success, .bg-danger {
     color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-endscreen {
+    display: flex;
+    justify-content: center;
+}
+
+.card-img-top  {
+    height: 20rem;
+    object-fit: cover;
+    width: 40rem;
+}
+
+.card-margin {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.card-img-top-endscreen {
+    height: 20rem;
+    object-fit: contain;
+    width: 40rem;
+    background-color: #cfebea;
+}
+
+.border-none {
+    border: none !important;
+}
+
+.progress {
+    border-radius: 0 !important;
+}
+
+.quiz-card {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.164);
+}
+
+.card-body {
+    box-shadow: 1px 1px 1px rgb(212 212 212);
 }
