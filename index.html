@@ -20,66 +20,70 @@
 </head>
 
 <body onload="render()">
-  <div class="card quiz-card" id="endscreen" style="display: none;" style="width: 40rem;">
-    <img src="img/trophy.png" class="card-img-top-endscreen" alt="...">
-    <div class="card border-none card-margin" >
-      <h1 class="text-center">
-        Quiz beendet!
-      </h1>
-      <div class="text-center">
-        Du hast <b id="amount-of-right-questions"> XX </b> Fragen von <b id="amount-of-questions"> XX </b> richtig beantwortet.
+
+  <div class="content-container">
+    <div class="card quiz-card card-endscreen" id="endscreen" style="display: none;" style="width: 40rem;">
+      <img src="img/trophy.png" class="card-img-top-endscreen" alt="...">
+      <div class="card border-none card-margin">
+        <h1 class="text-center">
+          Quiz beendet!
+        </h1>
+        <div class="text-center">
+          Du hast <b id="amount-of-right-questions"> XX </b> Fragen von <b id="amount-of-questions"> XX </b> richtig
+          beantwortet.
+        </div>
       </div>
-    </div>
 
       <div class="btn-endscreen bottom-spacing">
         <button type="button" onclick="restartGame()" class="btn btn-primary ">Erneut spielen</button>
       </div>
     </div>
-  </div>
 
 
-  <div class="card quiz-card card-margin" id="questionbody" style="width: 40rem;">
-    <img src="img/questions.png" class="card-img-top" alt="...">
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" id="progressbar">25%</div>
+    <div class="card quiz-card card-margin" id="questionbody" style="width: 40rem;">
+      <img src="img/questions.png" class="card-img-top" alt="...">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" id="progressbar">25%</div>
+      </div>
+      <div class="card-body">
+        <div class="bottom-spacing">
+          <h5 class="card-title " id="questiontext">Frage</h5>
+        </div>
+
+        <div class="card selected-answer bottom-spacing">
+          <div class="card-body" id="answer_1" onclick="answer('answer_1')">
+            This is some text within a card body.
+          </div>
+        </div>
+
+        <div class="card selected-answer bottom-spacing">
+          <div class="card-body" id="answer_2" onclick="answer('answer_2')">
+            This is some text within a card body.
+          </div>
+        </div>
+
+        <div class="card selected-answer bottom-spacing">
+          <div class="card-body" id="answer_3" onclick="answer('answer_3')">
+            This is some text within a card body.
+          </div>
+        </div>
+
+        <div class="card selected-answer bottom-spacing">
+          <div class="card-body" id="answer_4" onclick="answer('answer_4')">
+            This is some text within a card body.
+          </div>
+        </div>
+
+        <div class="question-footer">
+          <div>
+            <b id="question-number"></b> von <b id="all-questions-number"></b> Fragen
+          </div>
+          <button type="button" id="next-button" onclick="nextQuestion()" class="btn btn-primary" disabled>Nächste
+            Frage</button>
+        </div>
+      </div>
     </div>
-    <div class="card-body" >
-      <div class="bottom-spacing">
-        <h5 class="card-title " id="questiontext">Frage</h5>
-      </div>
 
-      <div class="card selected-answer bottom-spacing">
-        <div class="card-body" id="answer_1" onclick="answer('answer_1')">
-          This is some text within a card body.
-        </div>
-      </div>
-
-      <div class="card selected-answer bottom-spacing">
-        <div class="card-body" id="answer_2" onclick="answer('answer_2')">
-          This is some text within a card body.
-        </div>
-      </div>
-
-      <div class="card selected-answer bottom-spacing">
-        <div class="card-body" id="answer_3" onclick="answer('answer_3')">
-          This is some text within a card body.
-        </div>
-      </div>
-
-      <div class="card selected-answer bottom-spacing">
-        <div class="card-body" id="answer_4" onclick="answer('answer_4')">
-          This is some text within a card body.
-        </div>
-      </div>
-
-      <div class="question-footer">
-        <div>
-          <b id="question-number"></b> von <b id="all-questions-number"></b> Fragen
-        </div>
-        <button type="button" id="next-button" onclick="nextQuestion()" class="btn btn-primary" disabled>Nächste
-          Frage</button>
-      </div>
-    </div>
   </div>
 </body>
 

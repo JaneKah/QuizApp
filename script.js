@@ -64,7 +64,7 @@ function showQuestion() {
 
 
 function gameOver() {
-    return currentQuestion >= questions.length;
+    return currentQuestion >= questions.length
 }
 
 
@@ -115,6 +115,7 @@ function answer(selection) {
 
 
 function rightAnswerSelected(selectedQuestionNumber) {
+    let question = questions[currentQuestion];
    return  selectedQuestionNumber == question['right_answer']
 }
 

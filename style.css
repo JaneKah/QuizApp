@@ -4,6 +4,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(img/gears.png);
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     width: 100%;
 }
 
 .question-footer {
@@ -39,7 +47,6 @@ body {
 .card-img-top  {
     height: 20rem;
     object-fit: cover;
-    width: 40rem;
 }
 
 .card-margin {
@@ -50,7 +57,6 @@ body {
 .card-img-top-endscreen {
     height: 20rem;
     object-fit: contain;
-    width: 40rem;
     background-color: #cfebea;
 }
 
@@ -68,4 +74,25 @@ body {
 
 .card-body {
     box-shadow: 1px 1px 1px rgb(212 212 212);
+}
+
+.card-endscreen {
+    width: 40rem;
+}
+
+
+@media (max-width: 400px) { 
+    body {
+        overflow: hidden;
+        justify-content: flex-start;
+    }
+
+    .content-container {
+      padding: 0 !important;
+      
+    }
+
+    .card-img-top-endscreen {
+        width: 100%;
+    }
 }
