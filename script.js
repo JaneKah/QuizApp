@@ -80,19 +80,20 @@ function showCurrentQuestion() {
     showProgress();
     let question = questions[currentQuestion];
     document.getElementById('questiontext').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
-    document.getElementById('answer_4').innerHTML = question['answer_4'];
+    document.getElementById('answer_1').innerHTML = '<span class="letter">A</span>  ' + question['answer_1'];
+    document.getElementById('answer_2').innerHTML = '<span class="letter">B</span>  ' + question['answer_2'];
+    document.getElementById('answer_3').innerHTML = '<span class="letter">C</span>  ' + question['answer_3'];
+    document.getElementById('answer_4').innerHTML = '<span class="letter">D</span>  ' + question['answer_4'];
 }
 
 
 function showProgress() {
     let percent = (currentQuestion + 1)/questions.length;
     percent = Math.round(percent*100);
-    document.getElementById('progressbar').innerHTML = `${percent} %`
-    document.getElementById('progressbar').style = `width: ${percent}%;`
+    document.getElementById('progressbar').innerHTML = `${percent} %`;
+    document.getElementById('progressbar').style = `width: ${percent}%;`;
 }
+
 
 function answer(selection) {
     let question = questions[currentQuestion];
@@ -108,9 +109,10 @@ function answer(selection) {
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
         audioFail.play();
     }
+
     document.getElementById('next-button').disabled = false;
 
-    showQuestion()
+    showQuestion();
 }
 
 
