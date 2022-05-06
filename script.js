@@ -40,11 +40,11 @@ let questions = [
     "right_answer": 3
 },
 ];
-
 let currentQuestion = 0;
 let rightQuestions = 0;
 let audioSuccess = new Audio('audio/right-answer.mp3');
 let audioFail = new Audio('audio/wrong-answer.mp3')
+
 
 function render() {
    document.getElementById('all-questions-number').innerHTML = questions.length;
@@ -109,10 +109,19 @@ function answer(selection) {
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
         audioFail.play();
     }
-
     document.getElementById('next-button').disabled = false;
-
+    disableChoice(selection);
     showQuestion();
+}
+
+
+function disableChoice(selection) {
+    if (selection) {
+        document.getElementById(`answer_1`).classList.add('disabled');
+        document.getElementById(`answer_2`).classList.add('disabled');
+        document.getElementById(`answer_3`).classList.add('disabled');
+        document.getElementById(`answer_4`).classList.add('disabled');
+    } 
 }
 
 
@@ -124,6 +133,10 @@ function rightAnswerSelected(selectedQuestionNumber) {
 
 function nextQuestion() {
     currentQuestion++; //z.B. von 0 auf 1;
+    document.getElementById(`answer_1`).classList.remove('disabled');
+    document.getElementById(`answer_2`).classList.remove('disabled');
+    document.getElementById(`answer_3`).classList.remove('disabled');
+    document.getElementById(`answer_4`).classList.remove('disabled');
     document.getElementById('next-button').disabled = true;
     resetAnswerButtons();
     showQuestion();
